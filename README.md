@@ -2,6 +2,8 @@
 
 Corriger les problèmes d'aggrerating et rating des apps : Product Review et Loox
 
+Permet également de renseigner une valeur standard si aucune notation n'est effective sur certains produits
+
 Rendez-vous dans les fichiers de votre thème:
 
 Boutique en ligne - Actions - modifier le code
