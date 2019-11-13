@@ -1,0 +1,24 @@
+{% assign ratingValue = "5.0" %}
+{% assign ratingCount = "1" %}
+
+{% if product.metafields.spr.reviews %}
+{% capture review_data %}{{ product.metafields.spr.reviews }}{% endcapture %}
+{% assign ra_a1 = review_data | split: "ratingValue" %} 
+{% assign ra_a2 = ra_a1[1] | split: "=" %}
+{% assign ra_a3 = ra_a2[1] | split: '"' %}
+{% assign ratingValue = ra_a3[1] %}
+{% assign rc_a1 = review_data | split: "reviewCount" %} 
+{% assign rc_a2 = rc_a1[1] | split: "=" %}
+{% assign rc_a3 = rc_a2[1] | split: '"' %}
+{% assign ratingCount = rc_a3[1] %}
+{% endif %}
+{% if product.metafields.loox.num_reviews %} 
+{% assign ratingValue = product.metafields.loox.avg_rating %}
+{% assign ratingCount = product.metafields.loox.num_reviews %}
+{% endif %}
+
+<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">   
+  <meta itemprop="ratingValue" content="{% if ratingValue %}{{ ratingValue }}{% else %}5.0{% endif %}"/> 
+  <meta itemprop="ratingCount" content="{% if ratingCount %}{{ ratingCount }}{% else %}1{% endif %}"/> 
+</div> 
+
