@@ -1,5 +1,7 @@
 # reviews-structured-data
 
+Corriger les problèmes d'aggrerating et rating des apps : Product Review et Loox
+
 Rendez-vous dans les fichiers de votre thème:
 
 Boutique en ligne - Actions - modifier le code
